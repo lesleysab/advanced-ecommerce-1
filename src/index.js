@@ -4,7 +4,15 @@ import App from './App';
 import './index.css';
 import state from './state';
 
+const {
+  numberOfItemsInCart,
+  products,
+} = state;
+
 ReactDOM.render(
-  <App />,
+  <App
+    numberOfItemsInCart={numberOfItemsInCart}
+    products={products}
+  />,
   document.getElementById('root')
 );
