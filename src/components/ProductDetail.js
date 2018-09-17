@@ -1,59 +1,13 @@
 import React from "react";
 
 function ProductDetail(props) {
-  //   renderStars(product) {
-  //     if (product.rating === 1) {
-  //       return (
-  //         <p>
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //         </p>
-  //       );
-  //     } else if (product.rating === 2) {
-  //       return (
-  //         <p>
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //         </p>
-  //       );
-  //     } else if (product.rating === 3) {
-  //       return (
-  //         <p>
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //         </p>
-  //       );
-  //     } else if (product.rating === 4) {
-  //       return (
-  //         <p>
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star-empty" />
-  //         </p>
-  //       );
-  //     } else if (product.rating === 5) {
-  //       return (
-  //         <p>
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //           <span className="glyphicon glyphicon-star" />
-  //         </p>
-  //       );
-  //     }
-  //   }
+  function renderStars() {
+    let stars = [];
+    for (let i = 0; i < props.product.rating; i++) {
+      stars.push(<span className="glyphicon glyphicon-star" />);
+    }
+    return stars;
+  }
 
   return (
     <div className="col-sm-4 col-lg-4 col-md-4">
@@ -65,10 +19,11 @@ function ProductDetail(props) {
             <a href="#">{props.product.name}</a>
           </h4>
           <p>{props.product.description}</p>
-        </div>
-        <div className="ratings">
-          <p className="pull-right">{props.product.reviews} reviews</p>
-          {/* <p>{this.renderStars(product)}</p> */}
+
+          <div className="ratings">
+            <p className="pull-right">{props.product.reviews} reviews</p>
+            <p>{renderStars()}</p>
+          </div>
         </div>
       </div>
     </div>
