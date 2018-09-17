@@ -9,6 +9,10 @@ function ProductDetail(props) {
     return stars;
   }
 
+  // addToCart () {
+  //   let cart= [];
+
+  // }
   return (
     <div className="col-sm-4 col-lg-4 col-md-4">
       <div className="thumbnail">
@@ -23,6 +27,9 @@ function ProductDetail(props) {
           <div className="ratings">
             <p className="pull-right">{props.product.reviews} reviews</p>
             <p>{renderStars()}</p>
+            <button className="cart-button" onClick={props.addToCart}>
+              Add
+            </button>
           </div>
         </div>
       </div>
